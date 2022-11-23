@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ButterOS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0%;
+            }
+
+            100% {
+                opacity: 100%;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-image: url(https://i.pinimg.com/originals/ce/ab/f7/ceabf7d52e085960708e7172dfc20bd1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            overflow: hidden;
+            padding: 0px;
+            color: white;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .home {
+            flex-wrap: wrap;
+        }
+
+        #app {
+            width: 12vw;
+            height: 12vw;
+            border-radius: 18px;
+            float: left;
+            margin: 30px;
+            display: inline-flex;
+            justify-content: center;
+            cursor: pointer;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #app p {
+            position: fixed;
+            margin-top: 12.5vw;
+            cursor: pointer;
+        }
+
+        #widget {
+            width: 24vw;
+            height: 12vw;
+            background-color: white;
+            margin: 30px;
+            display: inline-flex;
+            border-radius: 18px;
+            background-size: contain;
+            float: left;
+            background-repeat: no-repeat;
+        }
+
+        .time-w {
+            color: white;
+            font-size: 78px;
+            background-image: url(img/clear-sky.webp);
+            background-size: cover;
+            background-position: center;
+            font-weight: bolder;
+            justify-content: center;
+            cursor: default;
+        }
+
+        .brome {
+            background-image: url(https://butterdogco.com/img/favicon.ico);
+        }
+
+        .appstore {
+            background-image: url(img/appstore.png);
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <div class="home" id="home">
+            <div class="brome" id="app">
+                <p>Brome</p>
+            </div>
+            <div class="appstore" id="app">
+                <p>App Store</p>
+            </div>
+            <div class="time-w" id="widget">
+                <span id="datetime">time</span>
+            </div>
+        </div>
+        <div class="taskbar">
+
+        </div>
+        <script>
+            var clockElement = document.getElementById('widget');
+
+            function clock() {
+                clockElement.textContent = new Date().toLocaleTimeString();
+            }
+
+            setInterval(clock, 1000);
+        </script>
+    </center>
+</body>
+
+</html>
